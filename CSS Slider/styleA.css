@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body, html{
+ height: 100%;
+}
+
+ .container{
+    width: 100%;
+    height: 100%;
+
+    background-color: black;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.carousel{
+  border: 1px solid red;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding: 0 4rem;
+   position: relative;
+   gap: 2rem;
+}
+
+/*Los radiobutton se ocultan para que interactuemos con sus labels*/
+.carousel input{
+    display: none;
+}
+
+/*Establecemos la ventana por la que se van a ver solo dos cardas
+ El ancho tiene que ser el ancho de un card *2 más el gap entre cards
+*/
+.viewport{
+ width: 620px;
+ height: 460px;
+ overflow: hidden; /*todo lo que le salga del viewport se oculta*/
+
+}

@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body, html{
+ height: 100%;
+}
+
+ .container{
+    width: 100%;
+    height: 100%;
+
+    background-color: black;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.carousel{
+  border: 1px solid red;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding: 0 4rem;
+   position: relative;
+   gap: 2rem;
+}
+
+/*Los radiobutton se ocultan para que interactuemos con sus labels*/
+.carousel input{
+    display: none;
+}
+
+/*Establecemos la ventana por la que se van a ver solo dos cardas
+ El ancho tiene que ser el ancho de un card *2 más el gap entre cards
+*/
+.viewport{
+ width: 620px;
+ height: 460px;
+ overflow: hidden; /*todo lo que le salga del viewport se oculta*/
+
+}
+
+.slider{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: 100%;
+    width: max-content; /*El ancho del slider es lo que mida todo su contenido*/
+    transition: transform .5s ease;
+    
+    .card{
+        width: 300px;
+        height: 300px;
+        flex-shrink: 0; /*Esto me asegura que los elementos flexibles nunca van a reducir su tamaño debajo de los 300 px*/
+        background: white;
+        border-radius: 40px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: all .5s;
+        position: relative;
+
+        &::before{
+            content: "";
+            position: absolute;
+            
+        }
+
+        &:hover{
+            height: 440px;
+
+            .content p{
+                opacity: 1;
+            }
+
+        }
+
+        .pic{
+            width: 100%;
+            height:260px;
+            background-size: cover;
+            background-color: yellowgreen;
+            position: relative;
+
+            &::before{
+
+            }
+
+            &::after{
+
+            }
+        }
+
+        .content {
+            position: relative;
+            padding: 1rem;
+            top: -40px;
+
+            h4{
+                text-transform: uppercase;
+                margin-bottom: .5rem;
+
+                &::before{
+                   content:"...";
+                   color: rgb(54, 54, 163);
+                }
+
+                &::after{
+                  content:"...";
+                   color: rgb(53, 53, 161);
+                }
+            }
+
+            h5{
+                margin-bottom: .5rem;
+            }
+
+            p{
+               opacity: 0;
+               font-size: 0.9rem;
+               transition: .5s;
+            }
+        }
+    }
+
+}
