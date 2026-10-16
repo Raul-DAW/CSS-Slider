@@ -69,7 +69,13 @@ body, html{
         &::before{
             content: "";
             position: absolute;
-            
+            width: 40px;
+            height: 40px;
+            left: 260px;
+            top: 180px;
+            background: red;
+            border-bottom-right-radius: 40px;
+            z-index: 1;
         }
 
         &:hover{
@@ -101,6 +107,8 @@ body, html{
             position: relative;
             padding: 1rem;
             top: -40px;
+            z-index: 2;
+
 
             h4{
                 text-transform: uppercase;
@@ -126,7 +134,21 @@ body, html{
                font-size: 0.9rem;
                transition: .5s;
             }
-        }
+
+            &:nth-child(1) .pic {
+                     background-image: url('pic1.jpg');
+                }
+            &:nth-child(2) .pic {
+                     background-image: url('pick1.jpg');
+                }
+            &:nth-child(3) .pic {
+                     background-image: url('pick1.jpg');
+                }
+            &:nth-child(4) .pic {
+                     background-image: url('pick1.jpg');
+                }
     }
+
+}
 
 }
